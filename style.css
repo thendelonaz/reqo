@@ -71,7 +71,7 @@ button:hover{
     color: black;
 }
 
-p{
+#para-login{
     color: aliceblue;
     text-align: center;
 }
@@ -82,4 +82,15 @@ p:hover{
 
 a{
     color: black;
+}
+
+.about-section{
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+#about-para{
+    width: 100%;
+    margin-bottom: 10px;
+    text-wrap: ;
 }
