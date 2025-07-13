@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="login-body">
+        <div class="container">
+            <a href="main.html"><h2>REQO</h2></a>
+            <div class="form-container active" id="register-form">
+                <form action="">
+                    <h2>Register</h2>
+                    <input type="text" name="name" placeholder="First Name" required>
+                    <input type="text" name="surname" placeholder="Last Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <select name="role" required>
+                        <option value="">--Select Role--</option>
+                        <option value="provider">PROVIDER</option>
+                        <option value="Searcher">SEARCHER</option>
+                    </select>
+                    <div class="button-wrapper"><button type="submit" name="register">Register</button></div>
+                    
+                    <p id="para-login">Already have an account? <a href="login.html" > Log in</a></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html> 

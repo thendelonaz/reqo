@@ -13,11 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, rgb(0, 174, 255),rgb(0, 255, 179));
     color: black;
-}
-.container{
-    margin: 0 15px;
 }
 .form-container{
     display: none;
@@ -72,6 +68,7 @@ button:hover{
     font-size: 22px;
     background: rgb(214, 233, 250);
     color: black;
+    width: 25%;
 }
 
 #para-login{
@@ -85,6 +82,7 @@ p:hover{
 
 a{
     color: black;
+    text-decoration: none;
 }
 
 .about-section{
@@ -100,7 +98,15 @@ a{
     margin-bottom: 10px;
 }
 
-nav{
-    
+a>h2{
+    color: black;
 }
-a>h2{color: black;}
+
+.main-container{
+    margin: 0 15px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
