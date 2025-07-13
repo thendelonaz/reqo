@@ -5,7 +5,10 @@
     box-sizing: border-box;
     font-family: "poppins", serif;
 }
-body {
+body{
+    background: linear-gradient(to right, rgb(0, 174, 255),rgb(0, 255, 179));
+}
+.login-body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +88,9 @@ a{
 }
 
 .about-section{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    display: block;
     background: white;
     border-radius: 10px;
     padding: 20px;
@@ -92,5 +98,9 @@ a{
 #about-para{
     width: 100%;
     margin-bottom: 10px;
-    text-wrap: ;
 }
+
+nav{
+    
+}
+a>h2{color: black;}
