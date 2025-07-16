@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Reqo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'reqo01',
+        'USER':'reqo_admin',
+        'PASSWORD':'*Lesego01',
+        'HOST':'reqo-database-01.c14c66c0qshk.eu-north-1.rds.amazonaws.com',
+        'PORT':'5432',
     }
 }
 

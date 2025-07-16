@@ -6,3 +6,9 @@ def provhome(request):
 
 def mainhome(request):
     return render(request, 'main.html')
+
+def login_view(request):
+    return render(request, 'login.html')
+
+def register_view(request):
+    return render(request, 'register.html')
