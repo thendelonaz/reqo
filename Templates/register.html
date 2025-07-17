@@ -13,17 +13,27 @@
             <a href="main.html"><h2>REQO</h2></a>
             <div class="form-container active" id="register-form">
                 
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <h2>Register</h2>
                     <div>
                         {% for message in messages %}
-                            <h5 style="color: red;">{{message}}</h5>
+                            <h5 style="color: red">{{message}}</h5>
                         {% endfor %}
                     </div>
+                    <label for="profile_picture"><h5 style="color: aliceblue;">Profile picture:</h5></label>
+                    <input type="file" name="profile_picture" label="Profile picture" accept="image/*"  required>
+                    <label for="name"><h5 style="color: aliceblue;">Name:</h5></label>
                     <input type="text" name="name" placeholder="First Name" required>
+                    <label for="surname"><h5 style="color: aliceblue;">Surname:</h5></label>
                     <input type="text" name="surname" placeholder="Last Name" required>
+                    <label for="identity_number"><h5 style="color: aliceblue;">Identity Number:</h5></label>
+                    <input type="text" name="identity_number" placeholder="ID Number" required>
+                    <label for="phone_number"><h5 style="color: aliceblue;">Phone Number:</h5></label>
+                    <input type="text" name="phone_number" placeholder="Phone Number" required>
+                    <label for="email"><h5 style="color: aliceblue;">Email:</h5></label>
                     <input type="email" name="email" placeholder="Email" required>
+                    <label for="password"><h5 style="color: aliceblue;">Password:</h5></label>
                     <input type="password" name="password" placeholder="Password" required>
                     <input type="password" name="re_password" placeholder="Re-enter Password" required>
                     <select name="role" required>

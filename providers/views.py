@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
+from .models import Users
 
 # Create your views here.
 def provhome(request):
@@ -10,6 +11,15 @@ def mainhome(request):
     return render(request, 'main.html')
 
 def login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=email, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('provhome')
+        else:
+            messages.error(request, 'Invalid credentials!!!')
     return render(request, 'login.html')
 
 def searchhome(request):
@@ -17,32 +27,39 @@ def searchhome(request):
 
 def register_view(request):
     if request.method == 'POST':
-        # Handle registration logic here
+        profile_picture = request.FILES.get('profile_picture')
         name = request.POST.get('name')
         surname = request.POST.get('surname')
+        identity_number = request.POST.get('identity_number')
+        phone_number = request.POST.get('phone_number')
         email = request.POST.get('email')
         password = request.POST.get('password')
         re_password = request.POST.get('re_password')
         role = request.POST.get('role', '').upper()
-        # Add your registration logic here, such as saving to the database
         if password == re_password:
-            if User.objects.filter(email=email).exists():
+            if Users.objects.filter(email=email).exists():
                 messages.error(request, 'Email already exists')
+            elif Users.objects.filter(identity_number=identity_number).exists():
+                messages.error(request, 'Identity number already exists')
             elif role not in ['PROVIDER', 'SEARCHER']:
                 messages.error(request, 'Invalid role selected')
-            elif role == 'PROVIDER':
-                user = User.objects.create_user(username=email, first_name=name, last_name=surname, email=email, password=password)
+            else:
+                user = Users.objects.create(
+                    profile_picture=profile_picture,
+                    name=name,
+                    surname=surname,
+                    identity_number=identity_number,
+                    phone_number=phone_number,
+                    email=email,
+                    password=password,
+                    role=role
+                )
                 user.save()
-                user_login = auth.authenticate(username=email, password=password)
-                auth.login(request, user_login)
-                return redirect('provhome')
-            elif role == 'SEARCHER':
-                user = User.objects.create_user(username=email, first_name=name, last_name=surname, email=email, password=password)
-                user.save()
-                user_login = auth.authenticate(username=email, password=password)
-                auth.login(request, user_login)
-                messages.success(request, 'Searcher registered successfully')
-                return redirect('searchhome')
+                messages.success(request, f'{role.capitalize()} registered successfully')
+                if role == 'PROVIDER':
+                    return redirect('provhome')
+                else:
+                    return redirect('searchhome')
         else:
             messages.error(request, 'Passwords do not match')
     return render(request, 'register.html')
