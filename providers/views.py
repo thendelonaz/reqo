@@ -14,10 +14,14 @@ def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = auth.authenticate(username=email, password=password)
-        if user is not None:
-            auth.login(request, user)
-            return redirect('provhome')
+        if Users.objects.filter(email=email, password=password).exists():
+            user = Users.objects.get(email=email, password=password)
+            if user.role == 'PROVIDER':
+                return redirect('provhome')
+            elif user.role == 'SEARCHER':
+                return redirect('searchhome')
+            else:
+                messages.error(request, 'Invalid role')
         else:
             messages.error(request, 'Invalid credentials!!!')
     return render(request, 'login.html')
