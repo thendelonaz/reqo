@@ -1,10 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
     <title>Searcher home</title>
+    <link rel="stylesheet" href="{% static 'searchome.css' %}" />
 </head>
 <body>
-    this is search home page
+    <div class="container">
+        <header>
+            <h1>REQO</h1>
+        </header>
+        {% for service in services %}
+
+            <div class="provider-card">
+                <h2 class="provider_name">{{service.provider.name}} {{service.provider.surname}} </h2>
+                <div class="provider-job-images">
+                    <img src="{{ service.image1.url }}" alt="">
+                    <img src="{{ service.image2.url }}" alt="">
+                    <img src="{{ service.image3.url }}" alt="">
+                    <img src="{{ service.image4.url }}" alt="">
+                </div>
+                <div class="provider-info">
+                    <h2 class="job_title">{{service.title}}</h2>
+                    <p class="job_description">{{service.description}}</p>
+                    <div class="provider-prices">
+                        <h5 name="location">Location: {{service.location}}</h5>
+                        <h3>Price:</h3>
+                        <h3 class="job_price">R{{service.price}}/hr</h3>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-secondary">View Profile</button>
+                    </div>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
 </body>
 </html>

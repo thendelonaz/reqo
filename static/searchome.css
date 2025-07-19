@@ -1,0 +1,51 @@
+body{
+    background: black;
+}
+
+header {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+.provider-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(250, 225, 225, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.provider-job-images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.provider-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+img:hover {
+    transform: scale(2);
+    transition: transform 0.3s ease;
+}
+
+.provider-info {
+    margin: 10px 0 5px 0;
+    color: #333;
+}
+
+.provider-card p {
+    color: #666;
+    font-size: 15px;
+    margin: 5px 0;
+}

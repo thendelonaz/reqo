@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from .models import Users
+from .models import Users, Services
 
 # Create your views here.
 def provhome(request):
@@ -27,7 +27,8 @@ def login_view(request):
     return render(request, 'login.html')
 
 def searchhome(request):
-    return render(request, 'searchhome.html')
+    services = Services.objects.all()
+    return render(request, 'searchhome.html', {'services': services})
 
 def register_view(request):
     if request.method == 'POST':
