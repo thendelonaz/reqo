@@ -11,8 +11,13 @@
         <header>
             <h1>REQO</h1>
         </header>
+        <div class="search-bar">
+            <form action="search">
+                <input type="text" name="query" placeholder="Search..." />
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <div class="provider-cards-container">
-            <!---
             {% for service in services %}
                 <div class="provider-card">
                     <h2 class="provider_name">{{service.provider.name}} {{service.provider.surname}} </h2>
@@ -37,95 +42,96 @@
                     </div>
                 </div>
             {% endfor %}
+            <!--
+            <div class="provider-card">
+                <h2 class="provider_name">Jane Doe</h2>
+                <div class="provider-job-images">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                </div>
+                <div class="provider-info">
+                    <h2 class="job_title">Cleaning</h2>
+                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
+                    <div class="provider-prices">
+                        <h5 name="location">Location: Cape Town</h5>
+                        <h3>Price:</h3>
+                        <h3 class="job_price">R300.00/hr</h3>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-secondary">View Profile</button>
+                    </div>
+                </div>
+            </div>
+            <div class="provider-card">
+                <h2 class="provider_name">Jane Doe</h2>
+                <div class="provider-job-images">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                </div>
+                <div class="provider-info">
+                    <h2 class="job_title">Cleaning</h2>
+                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
+                    <div class="provider-prices">
+                        <h5 name="location">Location: Cape Town</h5>
+                        <h3>Price:</h3>
+                        <h3 class="job_price">R300.00/hr</h3>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-secondary">View Profile</button>
+                    </div>
+                </div>
+            </div>
+            <div class="provider-card">
+                <h2 class="provider_name">Jane Doe</h2>
+                <div class="provider-job-images">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                </div>
+                <div class="provider-info">
+                    <h2 class="job_title">Cleaning</h2>
+                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
+                    <div class="provider-prices">
+                        <h5 name="location">Location: Cape Town</h5>
+                        <h3>Price:</h3>
+                        <h3 class="job_price">R300.00/hr</h3>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-secondary">View Profile</button>
+                    </div>
+                </div>
+            </div>
+            <div class="provider-card">
+                <h2 class="provider_name">Jane Doe</h2>
+                <div class="provider-job-images">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                    <img src="channels4_profile.jpg" alt="">
+                </div>
+                <div class="provider-info">
+                    <h2 class="job_title">Cleaning</h2>
+                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
+                    <div class="provider-prices">
+                        <h5 name="location">Location: Cape Town</h5>
+                        <h3>Price:</h3>
+                        <h3 class="job_price">R300.00/hr</h3>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-secondary">View Profile</button>
+                    </div>
+                </div>
+            </div>
             -->
-            <div class="provider-card">
-                <h2 class="provider_name">Jane Doe</h2>
-                <div class="provider-job-images">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                </div>
-                <div class="provider-info">
-                    <h2 class="job_title">Cleaning</h2>
-                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
-                    <div class="provider-prices">
-                        <h5 name="location">Location: Cape Town</h5>
-                        <h3>Price:</h3>
-                        <h3 class="job_price">R300.00/hr</h3>
-                    </div>
-                    <div class="provider-actions">
-                        <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-secondary">View Profile</button>
-                    </div>
-                </div>
-            </div>
-            <div class="provider-card">
-                <h2 class="provider_name">Jane Doe</h2>
-                <div class="provider-job-images">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                </div>
-                <div class="provider-info">
-                    <h2 class="job_title">Cleaning</h2>
-                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
-                    <div class="provider-prices">
-                        <h5 name="location">Location: Cape Town</h5>
-                        <h3>Price:</h3>
-                        <h3 class="job_price">R300.00/hr</h3>
-                    </div>
-                    <div class="provider-actions">
-                        <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-secondary">View Profile</button>
-                    </div>
-                </div>
-            </div>
-            <div class="provider-card">
-                <h2 class="provider_name">Jane Doe</h2>
-                <div class="provider-job-images">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                </div>
-                <div class="provider-info">
-                    <h2 class="job_title">Cleaning</h2>
-                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
-                    <div class="provider-prices">
-                        <h5 name="location">Location: Cape Town</h5>
-                        <h3>Price:</h3>
-                        <h3 class="job_price">R300.00/hr</h3>
-                    </div>
-                    <div class="provider-actions">
-                        <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-secondary">View Profile</button>
-                    </div>
-                </div>
-            </div>
-            <div class="provider-card">
-                <h2 class="provider_name">Jane Doe</h2>
-                <div class="provider-job-images">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                    <img src="channels4_profile.jpg" alt="">
-                </div>
-                <div class="provider-info">
-                    <h2 class="job_title">Cleaning</h2>
-                    <p class="job_description">We provide professional cleaning services for homes and offices.</p>
-                    <div class="provider-prices">
-                        <h5 name="location">Location: Cape Town</h5>
-                        <h3>Price:</h3>
-                        <h3 class="job_price">R300.00/hr</h3>
-                    </div>
-                    <div class="provider-actions">
-                        <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-secondary">View Profile</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </body>
