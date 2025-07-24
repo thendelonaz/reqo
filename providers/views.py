@@ -33,8 +33,8 @@ def searchhome(request):
 def search(request):
     if request.method == 'POST':
         search_query = request.POST.get('query')
-        services = Services.objects.filter(name__icontains=search_query)
-        return render(request, 'search.html', {'services': services})
+        services = Services.objects.filter(title__icontains=search_query)
+        return render(request, 'searchhome.html', {'services': services})
     return redirect('searchhome')
 
 def register_view(request):

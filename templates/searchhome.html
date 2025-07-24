@@ -12,9 +12,9 @@
             <h1>REQO</h1>
         </header>
         <div class="search-bar">
-            <form action="search" method="POST">
+            <form action="{% url 'search' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="query" placeholder="Search..." />
+                <input type="search" name="query" placeholder="Search..." />
                 <button type="submit">Search</button>
             </form>
         </div>
