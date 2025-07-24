@@ -30,6 +30,13 @@ def searchhome(request):
     services = Services.objects.all()
     return render(request, 'searchhome.html', {'services': services})
 
+def search(request):
+    if request.method == 'POST':
+        search_query = request.POST.get('query')
+        services = Services.objects.filter(name__icontains=search_query)
+        return render(request, 'search.html', {'services': services})
+    return redirect('searchhome')
+
 def register_view(request):
     if request.method == 'POST':
         profile_picture = request.FILES.get('profile_picture')
