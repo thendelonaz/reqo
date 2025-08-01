@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f9fa;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: 4px;
+    color: #2d3e50;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 30px 40px;
+}
+
+header h2 {
+    text-align: center;
+    color: #3a5a8c;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.requests-section h3,
+.suggested-jobs-section h3 {
+    color: #2d3e50;
+    margin-bottom: 18px;
+    border-left: 4px solid #3a5a8c;
+    padding-left: 10px;
+}
+
+.requests-list,
+.jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.request-card,
+.job-card {
+    background: #f5f8fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(60,90,130,0.07);
+    padding: 20px 22px;
+    min-width: 260px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.request-card h4,
+.job-card h4 {
+    margin: 0 0 10px 0;
+    color: #3a5a8c;
+}
+
+.request-card p,
+.job-card p {
+    margin: 6px 0;
+    font-size: 1em;
+}
+
+.btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #3a5a8c;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #2d3e50;
+}
+
+.btn-secondary {
+    background: #e0e6ed;
+    color: #3a5a8c;
+}
+
+.btn-secondary:hover {
+    background: #cfd8e3;
+}

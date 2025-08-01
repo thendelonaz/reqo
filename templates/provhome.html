@@ -1,10 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Provider Home</title>
+    <link rel="stylesheet" href="{% static 'provhome.css' %}">
 </head>
 <body>
-    This is the provider home page
+    <h1>REQO</h1>
+    <div class="container">
+        <header>
+            <h2>Welcome, Provider!</h2>
+        </header>
+
+        <section class="requests-section">
+            <h3>Requests from Searchers</h3>
+            <div class="requests-list">
+                <!-- Example request card, loop through requests in Django -->
+                {% for request in requests %}
+                <div class="request-card">
+                    <h4>{{ request.searcher.name }} {{ request.searcher.surname }}</h4>
+                    <p><strong>Job:</strong> {{ request.title }}</p>
+                    <p><strong>Description:</strong> {{ request.description }}</p>
+                    <p><strong>Location:</strong> {{ request.location }}</p>
+                    <button class="btn btn-primary">Respond</button>
+                </div>
+                {% empty %}
+                <p>No requests at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="suggested-jobs-section">
+            <h3>Jobs That May Fit You</h3>
+            <div class="jobs-list">
+                <!-- Example job card, loop through jobs in Django -->
+                {% for job in suggested_jobs %}
+                <div class="job-card">
+                    <h4>{{ job.title }}</h4>
+                    <p>{{ job.description }}</p>
+                    <p><strong>Location:</strong> {{ job.location }}</p>
+                    <p><strong>Pay:</strong> R{{ job.pay }}/hr</p>
+                    <button class="btn btn-secondary">View Details</button>
+                </div>
+                {% empty %}
+                <p>No suggested jobs at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
 </body>
 </html>
